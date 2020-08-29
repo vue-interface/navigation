@@ -6,7 +6,7 @@ const { flatten } = require('@vue-interface/tailwindcss');
 
 module.exports = plugin(function({ addComponents, theme }) {
     const nav = {
-        ':root': flatten(theme('nav')),
+        ':root': flatten(theme('navigation')),
 
         // Base class
         //
@@ -23,9 +23,9 @@ module.exports = plugin(function({ addComponents, theme }) {
         
         '.nav-link': {
             display: 'block',
-            padding: `${theme('nav.paddingY')} ${theme('nav.paddingX')}`,
+            padding: `${theme('navigation.paddingY')} ${theme('navigation.paddingX')}`,
             textDecoration: 'none',
-            transition: theme('nav.transition'),
+            transition: theme('navigation.transition'),
         },
         
         '.nav-link:hover, .nav-link:focus': {
@@ -34,7 +34,7 @@ module.exports = plugin(function({ addComponents, theme }) {
         
         // Disabled state lightens text
         '.nav-link.disabled': {
-            color: theme('nav.disabled.color'),
+            color: theme('navigation.disabled.color'),
             pointerEvents: 'none',
             cursor: 'default',
         },
@@ -44,35 +44,35 @@ module.exports = plugin(function({ addComponents, theme }) {
         //
         
         '.nav-tabs': {
-            borderBottom: `${theme('nav.tabs.borderWidth')} solid ${theme('nav.tabs.borderColor')}`,
+            borderBottom: `${theme('navigation.tabs.borderWidth')} solid ${theme('navigation.tabs.borderColor')}`,
         },
 
         '.nav-tabs .nav-link': {
-            marginBottom: `-${theme('nav.tabs.borderWidth')}`,
-            border: `${theme('nav.tabs.borderWidth')} solid transparent`,
-            borderTopLeftRadius: theme('nav.tabs.borderRadius'),
-            borderTopRightRadius: theme('nav.tabs.borderRadius'),
+            marginBottom: `-${theme('navigation.tabs.borderWidth')}`,
+            border: `${theme('navigation.tabs.borderWidth')} solid transparent`,
+            borderTopLeftRadius: theme('navigation.tabs.borderRadius'),
+            borderTopRightRadius: theme('navigation.tabs.borderRadius'),
         },
 
         '.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus': {
-            borderColor: `${theme('nav.tabs.hover.borderColor')} ${theme('nav.tabs.hover.borderColor')} ${theme('nav.tabs.borderColor')}`
+            borderColor: `${theme('navigation.tabs.hover.borderColor')} ${theme('navigation.tabs.hover.borderColor')} ${theme('navigation.tabs.borderColor')}`
         },
     
         '.nav-tabs .nav-link.disabled': {
-            color: theme('nav.disabled.color'),
+            color: theme('navigation.disabled.color'),
             backgroundColor: 'transparent',
             borderColor: 'transparent'
         },
         
         '.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link': {
-            color: theme('nav.tabs.active.color'),
-            backgroundColor: theme('nav.tabs.active.backgroundColor'),
-            borderColor: `${theme('nav.tabs.active.borderColor')} ${theme('nav.tabs.active.borderColor')} ${theme('nav.tabs.active.backgroundColor')}`
+            color: theme('navigation.tabs.active.color'),
+            backgroundColor: theme('navigation.tabs.active.backgroundColor'),
+            borderColor: `${theme('navigation.tabs.active.borderColor')} ${theme('navigation.tabs.active.borderColor')} ${theme('navigation.tabs.active.backgroundColor')}`
         },
         
         '.nav-tabs .dropdown-menu': {
             // Make dropdown border overlap tab border
-            marginTop: `-${theme('nav.borderWidth')}`,
+            marginTop: `-${theme('navigation.borderWidth')}`,
             // Remove the top rounded corners here since there is a hard edge above the menu
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
@@ -83,12 +83,12 @@ module.exports = plugin(function({ addComponents, theme }) {
         //
         
         '.nav-pills .nav-link': {
-            borderRadius: theme('nav.pills.borderRadius')
+            borderRadius: theme('navigation.pills.borderRadius')
         },
         
         '.nav-pills .nav-link.active, .nav-pills .show > .nav-link': {
-            color: theme('nav.pills.active.color'),
-            backgroundColor: theme('nav.pills.active.backgroundColor')
+            color: theme('navigation.pills.active.color'),
+            backgroundColor: theme('navigation.pills.active.backgroundColor')
         },
         
         //
@@ -123,7 +123,7 @@ module.exports = plugin(function({ addComponents, theme }) {
     addComponents(nav);
 }, {
     theme: {
-        nav: theme => ({
+        navigation: theme => ({
             paddingX: '1rem',
             paddingY: '.5rem',
             transition: 'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out',
