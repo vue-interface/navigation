@@ -1,2 +1,2 @@
-import Breadcrumb from './src/Breadcrumb';
-export default Breadcrumb;
+import Navigation from './src/Navigation';
+export default Navigation;
