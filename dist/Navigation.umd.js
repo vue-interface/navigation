@@ -2410,7 +2410,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./src/css/Navigation.css
 var Navigation = __webpack_require__("fa11");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3767c0da-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Navigation.vue?vue&type=template&id=844e5b92&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b329d524-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Navigation.vue?vue&type=template&id=844e5b92&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nav',{attrs:{"aria-label":"nav"}},[_c('ol',{staticClass:"nav",class:_vm.classes},[_c('navigation-items',[_vm._t("default")],2)],1)])}
 var staticRenderFns = []
 
@@ -2852,17 +2852,21 @@ function NavigationItemsvue_type_script_lang_js_link(vnode) {
       vnode = prepare(vnode);
       vnode.data.on.click = wrap(function (e) {
         context.parent.$emit('click-item', e, vnode);
-      }, listener(vnode, 'click'));
+      }, listener(vnode, 'click')); // Add support for @vue-interface/btn-dropdown.
 
-      if (vnode.tag === 'li') {
-        appendClass(vnode, 'nav-item');
-        vnode.children.filter(function (vnode) {
-          return !vnode.text;
-        }).map(function (child) {
-          return NavigationItemsvue_type_script_lang_js_link(child);
-        });
-        return vnode;
-      }
+      if (vnode.componentOptions && vnode.componentOptions.tag === 'btn-dropdown') {
+        vnode.data.attrs.nav = true;
+        vnode.data.attrs.href = vnode.data.attrs.href || '#';
+      } // If the vnode is already a list item.
+      else if (vnode.tag === 'li') {
+          appendClass(vnode, 'nav-item');
+          vnode.children.filter(function (vnode) {
+            return !vnode.text;
+          }).map(function (child) {
+            return NavigationItemsvue_type_script_lang_js_link(child);
+          });
+          return vnode;
+        }
 
       return h('li', {
         "class": {

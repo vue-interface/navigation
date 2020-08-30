@@ -84,8 +84,14 @@ export default {
                 vnode.data.on.click = wrap(e => {
                     context.parent.$emit('click-item', e, vnode);
                 }, listener(vnode, 'click'));
-                
-                if(vnode.tag === 'li') {
+
+                // Add support for @vue-interface/btn-dropdown.
+                if(vnode.componentOptions && vnode.componentOptions.tag === 'btn-dropdown') {
+                    vnode.data.attrs.nav = true;
+                    vnode.data.attrs.href = vnode.data.attrs.href || '#';
+                }
+                // If the vnode is already a list item.
+                else if(vnode.tag === 'li') {
                     appendClass(vnode, 'nav-item');
                     
                     vnode.children.filter(vnode => !vnode.text).map(child => link(child));

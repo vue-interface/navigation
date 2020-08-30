@@ -72,7 +72,7 @@ module.exports = plugin(function({ addComponents, theme }) {
         
         '.nav-tabs .dropdown-menu': {
             // Make dropdown border overlap tab border
-            marginTop: `-${theme('navigation.borderWidth')}`,
+            marginTop: `-${theme('navigation.tabs.borderWidth')} !important`,
             // Remove the top rounded corners here since there is a hard edge above the menu
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
