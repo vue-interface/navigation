@@ -1,8 +1,7 @@
 const plugin = require('tailwindcss/plugin');
 const { colors } = require('tailwindcss/defaultTheme');
-const defaultVariations = require('@vue-interface/variant/tailwindcss');
-
 const { flatten } = require('@vue-interface/tailwindcss/utils');
+const defaultVariations = require('@vue-interface/tailwindcss/defaultVariations');
 
 module.exports = plugin(function({ addComponents, theme }) {
     const nav = {
@@ -148,7 +147,7 @@ module.exports = plugin(function({ addComponents, theme }) {
                 paddingY: '.5rem',
                 active: {
                     color: theme('colors.white', colors.white),
-                    backgroundColor: theme('variations.primary', defaultVariations.primary),
+                    backgroundColor: theme('interface.variations.primary', defaultVariations.primary),
                 }
             }
         })

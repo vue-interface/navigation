@@ -38,7 +38,6 @@
   "homepage": "https://github.com/vue-interface/navigation/docs#readme",
   "dependencies": {
     "@vue-interface/tailwindcss": "^0.2.5",
-    "@vue-interface/variant": "^1.0.12",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
