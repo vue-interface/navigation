@@ -89,9 +89,16 @@ export default {
                 if(vnode.componentOptions && vnode.componentOptions.tag === 'btn-dropdown') {
                     vnode.data.attrs.nav = true;
                     vnode.data.attrs.href = vnode.data.attrs.href || '#';
+                    
+                    return h('li', {
+                        class: {
+                            'nav-item': true,
+                        },
+                    }, [vnode]);
                 }
+                
                 // If the vnode is already a list item.
-                else if(vnode.tag === 'li') {
+                if(vnode.tag === 'li') {
                     appendClass(vnode, 'nav-item');
                     
                     vnode.children.filter(vnode => !vnode.text).map(child => link(child));
