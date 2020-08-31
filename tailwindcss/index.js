@@ -6,7 +6,7 @@ const { flatten } = require('@vue-interface/tailwindcss');
 
 module.exports = plugin(function({ addComponents, theme }) {
     const nav = {
-        ':root': flatten(theme('navigation')),
+        ':root': flatten(theme('navigation'), '--navigation-'),
 
         // Base class
         //
