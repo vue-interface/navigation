@@ -13,7 +13,6 @@
         <div id="app" class="container">
             <h1 class="mb-5">navigation</h1>
 
-            <!--
             <navigation class="mb-5">
                 <a active href="#">Active</a>
                 <a href="#">Link</a>
@@ -46,7 +45,7 @@
                 <a href="#">Link</a>
                 <a href="#">Link</a>
                 <a href="#" disabled>Disabled</a>
-            </navigation>-->
+            </navigation>
 
             <navigation class="mb-5">
                 <li class="test">
@@ -54,7 +53,7 @@
                 </li>
                 <a href="#">Link</a>
                 <a href="#">Link</a>
-                <btn-dropdown label="Dropdown Item" split>
+                <btn-dropdown label="Dropdown Item">
                     <a href="#">Item 1</a>
                     <a href="#">Item 2</a>
                 </btn-dropdown>
@@ -65,15 +64,10 @@
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/@vue-interface/btn-dropdown@^0.9.0/dist/BtnDropdown.umd.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@vue-interface/btn-dropdown@^0.9.0/dist/BtnDropdown.umd.min.js"></script>
         <script type="text/javascript" src="./dist/Navigation.umd.js"></script>
         <script type="text/javascript">
             Vue.use(VueRouter);
-
-            const {
-                BtnDropdown,
-                Navigation
-            } = window.Navigation;
 
             const router = new VueRouter({
                 routes: [{
