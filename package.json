@@ -37,6 +37,7 @@
   },
   "homepage": "https://github.com/vue-interface/navigation/docs#readme",
   "dependencies": {
+    "@vue-interface/btn-dropdown": "^0.9.9",
     "@vue-interface/tailwindcss": "^0.2.4",
     "@vue-interface/variant": "^1.0.12",
     "core-js": "^3.6.4",

@@ -89,7 +89,7 @@ export default {
                 if(vnode.componentOptions && vnode.componentOptions.tag === 'btn-dropdown') {
                     vnode.data.attrs.nav = true;
                     vnode.data.attrs.href = vnode.data.attrs.href || '#';
-                    
+
                     return h('li', {
                         class: {
                             'nav-item': true,
