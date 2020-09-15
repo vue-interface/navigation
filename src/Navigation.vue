@@ -20,22 +20,10 @@ export default {
     },
 
     props: {
-        fill: {
-            type: Boolean,
-            default: false
-        },
-        justified: {
-            type: Boolean,
-            default: false
-        },
-        pills: {
-            type: Boolean,
-            default: false
-        },
-        tabs: {
-            type: Boolean,
-            default: true
-        }
+        fill: Boolean,
+        justified: Boolean,
+        pills: Boolean,
+        tabs: Boolean
     },
 
     computed: {
