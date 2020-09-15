@@ -1,10 +1,8 @@
 <template>
-    <nav aria-label="nav">
-        <ol class="nav" :class="classes">
-            <navigation-items>
-                <slot />
-            </navigation-items>
-        </ol>
+    <nav aria-label="nav" class="nav" :class="classes">
+        <navigation-items>
+            <slot />
+        </navigation-items>
     </nav>
 </template>
 

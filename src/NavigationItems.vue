@@ -90,7 +90,7 @@ export default {
                     vnode.data.attrs.nav = true;
                     vnode.data.attrs.href = vnode.data.attrs.href || '#';
 
-                    return h('li', {
+                    return h('div', {
                         class: {
                             'nav-item': true,
                         },
@@ -98,15 +98,17 @@ export default {
                 }
                 
                 // If the vnode is already a list item.
-                if(vnode.tag === 'li') {
+                if(vnode.tag === 'div') {
                     appendClass(vnode, 'nav-item');
                     
-                    vnode.children.filter(vnode => !vnode.text).map(child => link(child));
+                    vnode.children
+                        .filter(vnode => !vnode.text)
+                        .map(child => link(child));
 
                     return vnode;
                 }                
 
-                return h('li', {
+                return h('div', {
                     class: {
                         'nav-item': true,
                     },
