@@ -1,6 +1,6 @@
 {
   "name": "@vue-interface/navigation",
-  "version": "0.9.12",
+  "version": "0.9.13",
   "description": "Vue navigation component.",
   "main": "index.js",
   "scripts": {
