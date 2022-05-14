@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import NavigationItems from './NavigationItems';
+import NavigationItems from './NavigationItems.vue';
 
 export default {
 

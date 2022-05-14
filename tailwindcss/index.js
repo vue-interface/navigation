@@ -1,12 +1,8 @@
 const plugin = require('tailwindcss/plugin');
-const { colors } = require('tailwindcss/defaultTheme');
-const { flatten } = require('@vue-interface/tailwindcss/utils');
-const defaultVariations = require('@vue-interface/tailwindcss/defaultVariations');
+const colors = require('tailwindcss/colors');
 
 module.exports = plugin(function({ addComponents, theme }) {
-    const nav = {
-        ':root': flatten(theme('navigation'), '--navigation-'),
-
+    addComponents({
         // Base class
         //
         // Kickstart any navigation component with a set of style resets. Works with
@@ -108,7 +104,7 @@ module.exports = plugin(function({ addComponents, theme }) {
         // Tabbable tabs
         //
         // Hide tabbable panes to start, show them when `.active`
-        
+
         '.tab-content > .tab-pane': {
             display: 'none'
         },
@@ -117,9 +113,7 @@ module.exports = plugin(function({ addComponents, theme }) {
             display: 'block'
         }
      
-    };
-    
-    addComponents(nav);
+    });
 }, {
     theme: {
         navigation: theme => ({
@@ -127,19 +121,19 @@ module.exports = plugin(function({ addComponents, theme }) {
             paddingY: '.5rem',
             transition: 'color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out',
             disabled: {
-                color: theme('colors.gray.600', colors.gray[600]),
+                color: theme('colors.gray.400', colors.gray['400']),
             },
             tabs: {
-                borderColor: theme('colors.gray.300', colors.gray[300]),
+                borderColor: theme('colors.gray.300', colors.gray['300']),
                 borderRadius: '.25rem',
                 borderWidth: '1px',
                 active: {
-                    color: theme('colors.gray.700', colors.gray[700]),
+                    color: theme('colors.gray.700', colors.gray['700']),
                     backgroundColor: theme('colors.white', colors.white),
-                    borderColor: theme('colors.gray.300', colors.gray[300]),
+                    borderColor: theme('colors.gray.300', colors.gray['300']),
                 },
                 hover: {
-                    borderColor: theme('colors.gray.300', colors.gray[300]),
+                    borderColor: theme('colors.gray.300', colors.gray['300']),
                 }
             },
             pills: {
@@ -147,7 +141,7 @@ module.exports = plugin(function({ addComponents, theme }) {
                 paddingY: '.5rem',
                 active: {
                     color: theme('colors.white', colors.white),
-                    backgroundColor: theme('interface.variations.primary', defaultVariations.primary),
+                    backgroundColor: theme('variations', colors.sky['600']),
                 }
             }
         })

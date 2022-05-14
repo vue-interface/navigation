@@ -1,2 +1,7 @@
-import Navigation from './src/Navigation';
-export default Navigation;
+import Navigation from './src/Navigation.vue';
+import NavigationItems from './src/NavigationItems.vue';
+
+export {
+    Navigation,
+    NavigationItems
+};
